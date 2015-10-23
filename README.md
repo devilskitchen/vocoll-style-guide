@@ -1,5 +1,5 @@
-Automatic Styles Guide
-======================
+Automatic Styles Guide (WiP)
+============================
 
 A Style Guide that outputs most standard HTML elements, with the styles from your website.
 
@@ -30,8 +30,9 @@ When you have put the files and folder in the right place, open the ```style-gui
 <!-- $projectCSSPath = ../css/styles.css -->
 
 <!-- KIT VARIABLE == ENTER A "HOW TO USE" HERE -->
-<!-- $sgHowTo = This style guide shows how each of the elements within your website works.
-Click on "View Source" and you can then find the HTML that will generate the look and feel that you want. -->
+<!-- $sgHowTo = This style guide shows how each of the elements within
+your website works. Click on "View Source" and you can then find the HTML
+that will generate the look and feel that you want. -->
 
 ```
 
