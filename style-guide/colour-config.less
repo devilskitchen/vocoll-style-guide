@@ -1,0 +1,221 @@
+// SANDBOX VERSION
+// If you using v4 (early July 2014), use these imports
+// Import the colours LESS file: WATCH OUT FOR VARIABLE CLASHES!
+//@import "../less/01-site-setup/01-01-site-settings";
+//@import "../less/03-site-design/01-global/01-02-colours";
+//@import "../less/03-site-design/01-global/01-01-units";
+
+// If you using v2 (CMS v4.6.2) or 3 (v5.0.0 until July 2014), use these imports (you may need more)
+//@import "../less/02-site-variables/02-01-colours";
+
+
+// Size variables
+@swatch-size:32px;
+@swatch-large-size:64px;
+@space-em:0.4em;
+@space-px:4px;
+
+// Swatch colours added to maintain the integrity of the files: simply insert your own colour references, "@color1" instead of "red".
+@swatch-color1:red;
+@swatch-color2:blue;
+@swatch-color3:yellow;
+@swatch-color4:green;
+
+// Swatch colours added to maintain the integrity of the files: simply insert your own colour references, "@lightest-grey" instead of "@swatch-grey1".
+
+//@color1-value:red(@color1);
+@swatch-grey1:#333;
+
+// Text: you should use both light-text and dark-text
+@sg-text-light:#DDD;
+@sg-text-dark:#444;
+
+
+// Unfortunately, you have to set these up. Bit manual -- sorry!
+
+// span
+.color-swatches {
+	span {
+		display:inline-block;
+		width:@swatch-size;
+		height:@swatch-size;
+		margin:0.4em;
+	}
+	&.brand {
+		span {
+			&:nth-child(1) {
+				background:@swatch-color1;
+			}
+			&:nth-child(2) {
+				background:@swatch-color2;
+			}
+			&:nth-child(3) {
+				background:@swatch-color3;
+			}
+			&:nth-child(4) {
+				background:@swatch-color4;
+			}
+			/*&:nth-child(5) {
+				background:@swatch-color5;
+			}*/
+			/*&:nth-child(6) {
+				background:@swatch-color6;
+			}*/
+			/*&:nth-child(7) {
+				background:@swatch-color7;
+			}*/
+			/*&:nth-child(8) {
+				background:@swatch-color8;
+			}*/
+			/*&:nth-child(9) {
+				background:@swatch-color9;
+			}*/
+			/*&:nth-child(10) {
+				background:@swatch-color10;
+			}*/
+		}
+	}
+	&.grey {
+		span {
+			&:nth-child(1) {
+				//background:@lightest-grey;
+			}
+			&:nth-child(2) {
+				//background:@lighter-grey;
+			}
+			&:nth-child(3) {
+				//background:@light-grey;
+			}
+			&:nth-child(4) {
+				//background:@grey;
+			}
+			&:nth-child(5) {
+				//background:@dark-grey;
+			}
+			&:nth-child(6) {
+				//background:@darker-grey;
+			}
+			&:nth-child(7) {
+				//background:@darkest-grey;
+			}
+			/*&:nth-child(8) {
+				background:@grey8;
+				border:2px solid white;
+				box-shadow:0 0 3px rgba(0,0,0,0.7);
+			}
+			&:nth-child(9) {
+				background:@grey9;
+				border:2px solid white;
+				box-shadow:0 0 3px rgba(0,0,0,0.7);
+			}
+			&:nth-child(10) {
+				background:@grey10;
+				border:2px solid white;
+				box-shadow:0 0 3px rgba(0,0,0,0.7);
+			}*/
+		}
+	}
+}
+
+// Output swatches for lighten and darken colour functions for each brand colour
+.brand {
+	//.brand-swatches(3);
+}
+
+.brand1-function {
+	@swatch-col:@swatch-color1;
+	.col-function-swatches(20);
+}
+
+.brand2-function {
+	@swatch-col:@swatch-color2;
+	.col-function-swatches(20);
+}
+
+.brand3-function {
+	@swatch-col:@swatch-color3;
+	.col-function-swatches(20);
+}
+
+.brand4-function {
+	@swatch-col:@swatch-color4;
+	.col-function-swatches(20);
+}
+
+.greys-function {
+	@swatch-col:@swatch-grey1;
+	.col-function-swatches(20);
+}
+
+// Brand swatches
+/*.brand-swatches(@n, @i:1) when (@i =< @n) {
+	span {
+		&:nth-child(@{i}) {
+        	background:@color@{i};
+        	border:2px solid white;
+			box-shadow:0 0 3px rgba(0,0,0,0.7);
+        }
+	}
+	.brand-swatches(@n,(@i+1));
+}*/
+// End the color loop
+
+.color-swatches {
+	margin-top:(@space-em * 2);
+	span {
+		border:2px solid white;
+		text-align:center;
+		box-shadow:0 0 3px rgba(0,0,0,0.7);
+		margin-bottom:(@space-em * 5);
+		&:before {
+			position:relative;
+			top:@swatch-size;
+			font-size:11px;
+			font-weight:bold;
+			color:@sg-text-dark;
+		}
+	}
+	&.brand {
+		counter-reset:color-index;
+		span {
+			height:@swatch-large-size;
+			width:@swatch-large-size;
+			counter-increment:color-index;
+			margin-right:(@space-em * 3);
+			&:before {
+				top:@swatch-large-size;
+				content:"@color"counter(color-index);
+			}
+		}
+	}
+}
+
+// Use a looping mixin to give increments for various colour functions
+@color-function-increment:5%;
+
+// Lighten loop
+.col-function-swatches(@n, @i:1) when (@i =< @n) {
+	@step-label: (@i * @color-function-increment);
+	&.brand-ltn {
+		span {
+			&:nth-child(@{i}) {
+	        	background:lighten(@swatch-col,(@i * @color-function-increment));
+				&:before {
+			        content:"@{step-label}";
+		        }
+	        }
+		}
+	}
+	&.brand-dkn {
+		span {
+			&:nth-child(@{i}) {
+	        	background:darken(@swatch-col,(@i * @color-function-increment));
+				&:before {
+			        content:"@{step-label}";
+		        }
+	        }
+		}
+	}
+	.col-function-swatches(@n,(@i+1));
+}
+// End the color loop
