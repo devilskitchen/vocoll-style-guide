@@ -3,49 +3,49 @@
 <!--[if IE 8 ]><html lang="en" class="no-js iex lt-ie9 ie8"><![endif]-->
 <!--[if IE 9 ]><html lang="en" class="no-js iex ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js sg-html"><!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- DO NOT CHANGE THIS IMPORT: DO CHANGE YOUR PROJECT DETAILS IN config.kit -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- DO NOT CHANGE THIS IMPORT: DO CHANGE YOUR PROJECT DETAILS IN config.kit -->
 		<!-- @import "config" -->
-        <title><!--$projectName--> Style Guide</title>
-        <meta name="description" content="">
-        <!-- Set the meta for iOS Home Screen settings -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <!-- Set the meta for smartphones to resize properly -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <!-- XRayHTML styles -->
-        <link href="libs/x-ray-html/X-rayHTML.css" rel="stylesheet">
-        <link href="libs/prism/prism.css" rel="stylesheet">
-        <!-- The Style Guide styles -->
-        <link href="css/sg-styles.css" rel="stylesheet">
+		<title><!--$projectName--> Style Guide</title>
+		<meta name="description" content="">
+		<!-- Set the meta for iOS Home Screen settings -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- Set the meta for smartphones to resize properly -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<!-- XRayHTML styles -->
+		<link href="libs/x-ray-html/X-rayHTML.css" rel="stylesheet">
+		<link href="libs/prism/prism.css" rel="stylesheet">
+		<!-- The Style Guide styles -->
+		<link href="css/sg-styles.css" rel="stylesheet">
 		<!-- Set the framework styles -->
-        <link rel="stylesheet" href="<!--$projectCSSPath-->">
-        <!-- Import modernizr here to set the browser capabilities -->
-        <script src="libs/modernizr-dev.min.js"></script>
-        <!--[if lt IE 9]>
-	      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	    <![endif]-->
-    </head>
-    
-    <body class="sg-body">
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+		<link rel="stylesheet" href="<!--$projectCSSPath-->">
+		<!-- Import modernizr here to set the browser capabilities -->
+		<script src="libs/modernizr-dev.min.js"></script>
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+		
+	<body class="sg-body">
+		<!--[if lt IE 8]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
 		
 		<!-- DO NOT CHANGE THIS IMPORT -->
-		<!-- @import "kit-snippets/topnav" -->
+		<!-- @import "partials/topnav" -->
 		
 		<!-- METHOD ==
 			Wrap snippets in <div data-xrayhtml="flip" class="prism zeroclip"></div> and avoid white-space
 		-->
 		
-		<!-- To avoid clashes with Front-end Editing, a lot of Sandbox LESS is wrapped in #container. As such, this element needs to be added here -->
+		<!-- To avoid clashes -->
 		<div id="container">
-		
+	
 			<!-- Begin #style-guide -->
 			<div id="style-guide">
 			
@@ -58,41 +58,38 @@
 					<button type="button">Credits</button>
 					<div class="details">
 						<h3>Credits</h3>
-						<!-- @import "kit-snippets/credits" -->
+						<!-- @import "partials/credits" -->
 					</div>
 				</div>
 				<!-- End credits -->
 			
 <!-- Back indent all elements to avoid unnecessary whitespace in the code display -->
-<!-- @import "kit-snippets/colours" -->
+<!-- @import "partials/colours" -->
 
-<!-- @import "kit-snippets/text-blocks" -->
+<!-- @import "partials/text-blocks" -->
 
-<!-- @import "kit-snippets/lists" -->
+<!-- @import "partials/lists" -->
 
-<!-- @import "kit-snippets/text-inline" -->
+<!-- @import "partials/text-inline" -->
 
-<!-- @import "kit-snippets/tables" -->
+<!-- @import "partials/tables" -->
 
-<!-- @import "kit-snippets/images" -->
+<!-- @import "partials/images" -->
 
-<!-- @import "kit-snippets/forms" -->
+<!-- @import "partials/forms" -->
 
-<!-- @import "kit-snippets/placement-styles" -->
+<!-- @import "partials/placement-styles" -->
 
-<!-- @import "kit-snippets/misc-checklist" -->
-        	
+<!-- @import "partials/misc-checklist" -->
+					
 			</div>
 			<!-- End #style-guide -->
 		
 		</div>
 		<!-- End #container -->
 
-    <!-- Begin JS calls -->
-    <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/lib/jquery-1.11.0.min.js"><\/script>')</script -->
-    <script src="libs/jquery/jquery.js"></script>
-    <!-- script src="libs/jquery/jquery.js"></script -->
+		<!-- Begin JS calls -->
+		<script src="libs/jquery/jquery.js"></script>
 		<script src="libs/sg.js"></script>
 		<script src="libs/x-ray-html/X-rayHTML-config.js"></script>
 	
@@ -145,12 +142,12 @@
 			});
 			// Build an index of h2 IDs
 			$("h2.sg-element").each(function(i) {
-		    var current = $(this);
-		    current.attr("id", "title" + i);
-		    $("#toc").append("<a id='link" + i + "' href='#title" +
-		        i + "' title='" + current.attr("tagName") + "'>" + 
-		        current.html() + "</a>");
+				var current = $(this);
+				current.attr("id", "title" + i);
+				$("#toc").append("<a id='link" + i + "' href='#title" +
+						i + "' title='" + current.attr("tagName") + "'>" + 
+						current.html() + "</a>");
 			});
 		</script>
-    </body>
+	</body>
 </html>
